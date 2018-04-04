@@ -15,6 +15,16 @@ var keysDown = {};//bý til object sem geymir hvort það sé verið að ýta á
     delete keysDown[e.keyCode];//þá er takkanum eytt úr keysdown
   }, false);
 
+var backsong = document.createElement("audio");
+backsong.src = "sound/mainmenu.mp3";
+backsong.loop = true;
+backsong.volume = 0.1
+backsong.play();
+
+var pickup = document.createElement("audio");
+pickup.src = "sound/pickup.mp3";
+pickup.volume = 1
+
 var menu=function () {//bý til menuið
   ctx.font="50px Impact";//vel font
   ctx.fillStyle="#9b42f4";//og lit á texta
@@ -205,6 +215,7 @@ var game=function(){//hérna byrjar leikurinn
       && blom.y <= (jonatan.y + 32)
     ) {
       if (32 in keysDown && mission) {//ef þú ert að spila missionið og ýtir á space
+        pickup.play();
         ++blominv;//þá tekurðu upp blómið og annað birtist
         reset();
       }
