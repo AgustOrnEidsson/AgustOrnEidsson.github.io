@@ -15,11 +15,15 @@ var keysDown = {};//bý til object sem geymir hvort það sé verið að ýta á
     delete keysDown[e.keyCode];//þá er takkanum eytt úr keysdown
   }, false);
 
-var backsong = document.createElement("audio");
-backsong.src = "sound/mainmenu.mp3";
-backsong.loop = true;
-backsong.volume = 0.1
-backsong.play();
+var backsong = document.createElement("audio");//bý til audio var
+backsong.src = "sound/mainmenu.mp3";//finn hljóðið sem ég vil spila
+backsong.loop = true;//set á loop þannig það spili endalaust
+backsong.volume = 0.1//stilli styrk hljóðs
+backsong.play();//og spila hljóðið
+
+var wizsound = document.createElement("audio");
+wizsound.src = "sound/wizsound.mp3";
+wizsound.volume = 1
 
 var pickup = document.createElement("audio");
 pickup.src = "sound/pickup.mp3";
@@ -200,6 +204,7 @@ var game=function(){//hérna byrjar leikurinn
     if(217<jonatan.y && jonatan.y<300){//passa að playerinn sé nálægt wizardnum til að geta tekið við missioninu
       if (796<jonatan.x && jonatan.x<895) {
         ctx.drawImage(bubble, 592, 170,310,80);//birtist talbóla ef þú ert nógu nálægt
+        wizsound.play();
         ctx.font="15px Impact";
         ctx.fillStyle="#000000";
         ctx.fillText("Geturðu sótt handa mér 5 blóm fyrir seiðið mitt",canvas.width-tex,canvas.height-tey);
