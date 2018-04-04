@@ -23,7 +23,7 @@ var menu=function () {//bý til menuið
   ctx.font="25px Arial";//breyti um font
   ctx.fillText("Ýttu á 'space' til að halda áfram",canvas.width/2,canvas.height/2+10)//annar texti sem verður fyrir neðan þann fyrri
   ctx.fillStyle="#722a12";//breyti um lit
-  ctx.fillText("Örvatakkar til að hreyfa",canvas.width/2,canvas.height/2+60)
+  ctx.fillText("Örvatakkar/WASD til að hreyfa",canvas.width/2,canvas.height/2+60)
   ctx.fillText("'space' til að interacta",canvas.width/2,canvas.height/2+90)
   if (32 in keysDown) {//býð þangað til að það sé ýtt á 'space'
     game();//ef það er ýtt á space þá fer það í leikinn
