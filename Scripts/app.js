@@ -19,7 +19,6 @@ var backsong = document.createElement("audio");//bý til audio var
 backsong.src = "sound/mainmenu.mp3";//finn hljóðið sem ég vil spila
 backsong.loop = true;//set á loop þannig það spili endalaust
 backsong.volume = 0.1//stilli styrk hljóðs
-backsong.play();//og spila hljóðið
 
 var wizsound = document.createElement("audio");
 wizsound.src = "sound/wizsound.mp3";
@@ -40,6 +39,7 @@ var menu=function () {//bý til menuið
   ctx.fillText("Örvatakkar/WASD til að hreyfa",canvas.width/2,canvas.height/2+60)
   ctx.fillText("'space' til að interacta",canvas.width/2,canvas.height/2+90)
   if (32 in keysDown) {//býð þangað til að það sé ýtt á 'space'
+    backsong.play();//og spila hljóðið
     game();//ef það er ýtt á space þá fer það í leikinn
   }
   else{
